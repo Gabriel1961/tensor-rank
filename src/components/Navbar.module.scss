@@ -1,4 +1,5 @@
 @use "../variables.scss";
+@import "../index.scss";
 
 .container {
   background-color: variables.$background2;
@@ -8,14 +9,18 @@
 }
 
 .header {
+  @extend h1;
   outline: none;
   margin-left: 20px;
   font-size: 1.1rem;
   color: variables.$text;
-
   &:hover {
     color: variables.$highlight;
   }
+}
+
+.activeHeader{
+  color: variables.$highlight;
 }
 
 .logoContainer {

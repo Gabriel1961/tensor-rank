@@ -1,5 +1,5 @@
+@use "./variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Open+Sans:ital,wght@1,300&display=swap');
-
 * {
   font-family: 'Nunito', sans-serif;
   padding: 0;
@@ -24,6 +24,8 @@
 
 a {
   text-decoration: none;
+  outline: none;
+  color: variables.$text;
 }
 
 body {

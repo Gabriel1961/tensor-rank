@@ -1,0 +1,14 @@
+@use "/src/variables.scss";
+.container{
+  border-color: variables.$highlight;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid variables.$text;
+  margin: 10px;
+}
+
+.tagsContainer{
+  display: flex; 
+  justify-content:space-evenly;
+  margin-top: 10px;
+}
