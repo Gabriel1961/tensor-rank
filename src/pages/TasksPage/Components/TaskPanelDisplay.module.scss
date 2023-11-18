@@ -1,9 +1,8 @@
 @use "/src/variables.scss";
 .container{
-  border-color: variables.$highlight;
+  background-color: variables.$background2;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid variables.$text;
   margin: 10px;
 }
 

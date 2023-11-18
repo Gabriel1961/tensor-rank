@@ -11,7 +11,7 @@ interface ProfileDropdownProps {
 
 const ProfileDropdown: ParentComponent<ProfileDropdownProps> = (props) => {
   const [getIsOpen, setIsOpen] = createSignal(false)
-  const getLoginContext = useLogin();
+  const [getLoginContext] = useLogin();
   const onLoginClick = async () => {
     try {
       const provider = new GoogleAuthProvider()

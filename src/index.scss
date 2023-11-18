@@ -1,5 +1,6 @@
 @use "./variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Open+Sans:ital,wght@1,300&display=swap');
+
 * {
   font-family: 'Nunito', sans-serif;
   padding: 0;
@@ -34,10 +35,38 @@ body {
   min-height: 100vh;
 }
 
+p {
+  background-color: variables.$background2;
+  padding: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+label{
+  font-size: 1.1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: variables.$background3;
+}
+
 
 button {
   border-radius: 8px;

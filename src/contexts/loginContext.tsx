@@ -25,7 +25,6 @@ export const LoginProvider: ParentComponent = (props) => {
       else {
         setContextData({ user: null, loading: false } as LoginContextData)
       }
-      console.log(user)
     })
   })
   return (
@@ -36,5 +35,5 @@ export const LoginProvider: ParentComponent = (props) => {
 }
 
 export const useLogin = () => {
-  return useContext(LoginContext)
+  return [useContext(LoginContext)]
 }; 

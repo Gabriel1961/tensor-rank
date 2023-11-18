@@ -1,3 +1,5 @@
+import * as tf from "@tensorflow/tfjs"
+
 export interface Solution {
   id: string
   score: number
@@ -9,17 +11,11 @@ export interface Solution {
   }
 }
 
-export interface User {
-  id: string
-  name: string
-  tasksSolved: number 
-  tasksPublished: number
-}
-
 export enum TaskTag {
-  regression="regression",
-  classification="classification",
-  images="images",
+  regression = "regression",
+  classification = "classification",
+  images = "images",
+  easy = "easy",
 }
 
 export interface Task {
@@ -33,13 +29,35 @@ export interface Task {
 export interface Dataset {
   id: string
   name: string
+  description: string
   author: string
-  info: string
+  features: number
   instances: number
-  tags: string[]
+  csvUrl: string
+  subject: string 
+
+  headers: string[]
+  lables: string[]
+
+  tags: TaskTag[]
+}
+
+export interface DatasetData {
+  headers: string[],
+
+  testX: tf.Tensor2D
+  testY: tf.Tensor2D
+  trainX: tf.Tensor2D
+  trainY: tf.Tensor2D
+
+  dataHead: string[][]
 }
 
 // we will use this in the url because it is more readable than the id 
-export const encodeTaskTitleToUrl = (taskTitle:string) => {
-  return taskTitle.replace(" ","_")
+export const encodeTaskTitleToUrl = (taskTitle: string) => {
+  return taskTitle.replaceAll(" ", "_")
+}
+
+export const decodeTextTitleToUrl = (taskTitleUrl: string) => {
+  return taskTitleUrl.replaceAll("_", " ")
 }
